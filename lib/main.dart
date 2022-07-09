@@ -33,7 +33,10 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          '${BlocProvider.of<CounterCubit>(context).state.counter}',
+          '${BlocProvider.of<CounterCubit>(
+            context,
+            listen: true,
+          ).state.counter}',
           style: TextStyle(fontSize: 52.0),
         ),
       ),
